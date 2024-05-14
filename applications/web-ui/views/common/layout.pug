@@ -1,0 +1,51 @@
+doctype html
+html(lang=en)
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/google.fonts.css')
+    link(rel="stylesheet", href="/stylesheets/all.min.css")
+    link(rel="stylesheet", href="/stylesheets/ionicons.min.css")
+    link(rel='stylesheet', href='/stylesheets/adminlte.min.css')
+    link(rel='stylesheet', href='/stylesheets/toastr.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/jquery.dataTables.min.css')
+  body(class='hold-transition sidebar.pug-mini')
+    div(id="loading-spinner")
+      div(class="spinner")
+        i(class="fas fa-spinner fa-spin")
+    div(class='wrapper')
+
+      nav(class='main-header navbar navbar-expand navbar-white navbar-light')
+        include navbar
+
+      aside(class='main-sidebar sidebar-dark-primary elevation-4')
+        include main-sidebar
+
+      div(class='content-wrapper')
+        div(class="content-header")
+          div(class="container-fluid")
+            div(class="row mb-2")
+              div(class="col-sm-6")
+                h1(class="m-0 capitalize")= page
+
+        div(class="content-header")
+          div(class="container-fluid")
+            block content
+
+      footer(class="main-footer")
+        include footer
+
+  script(src="/javascripts/jquery.min.js")
+  script(src="/javascripts/bootstrap.bundle.min.js")
+  script(src="/javascripts/adminlte.min.js")
+  script(src="/javascripts/jquery.tmpl.min.js")
+  script(src="/javascripts/underscore-umd-min.js")
+  script(src="/javascripts/momentjs.min.js")
+  script(src="/javascripts/datatables/jquery.dataTables.min.js")
+  script(src="/javascripts/toastr.min.js")
+  script(src="/javascripts/atlas.webapp.js")
+  each plotScript in plotScripts ? plotScripts : []
+    script(src=plotScript)
+  script(src=`${pageScript}`)

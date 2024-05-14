@@ -1,0 +1,22 @@
+extends ../../common/layout
+block content
+    div(class='row')
+        div(class='col-lg-4')
+            div(class='card')
+                div(class='card-body')
+                    table(id='locations-table', class='table')
+                        thead
+                            tr
+                                th #
+                                th Location
+                                th Actions
+                        tbody
+        div(class='col-lg-8')
+            div(class='card')
+                div(class='card-header')
+                    h2(class="card-title")
+                        i(class="fas fa-map-marked-alt")
+                        |
+                        span(class="ml-3") Virtual Map
+                div(class='card-body')
+                    div(id='location-virtual-map', class='text-center') No map selected.

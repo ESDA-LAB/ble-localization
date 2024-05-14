@@ -1,0 +1,49 @@
+extends ../../common/layout
+block content
+    div(class='row')
+        div(class='col-lg-5')
+            div(class='card')
+                div(class='card-body')
+                    table(id='gateways-table', class='table')
+                        thead
+                            tr
+                                th #
+                                th Gateway
+                                th Version
+                                th IP Interfaces
+                                th Online At
+                                th Actions
+                        tbody
+        div(class='col-lg-7 d-none', id='gateway-view')
+            div(class='card')
+                div(class='card-header')
+                    h2(class="card-title")
+                        i(class="fab fa-raspberry-pi")
+                        |
+                        span(class="ml-3", id='gateway-preview-header') -
+                div(class='card-body')
+                    div(id='gateway-info', class='text-center')
+                        div(class='row')
+                            div(class='col-lg-4')
+                                div(class='info-box mb-3')
+                                    span(class="info-box-icon elevation-1")
+                                        i(class="fas fa-hdd")
+                                    div(class="info-box-content")
+                                        span(class="info-box-text") Disk Usage (%)
+                                        span(id='gateway-diskusage', class="info-box-number") N/A
+                            div(class='col-lg-4')
+                                div(class='info-box mb-3')
+                                    span(class="info-box-icon elevation-1")
+                                        i(class="fas fa-memory")
+                                    div(class="info-box-content")
+                                        span(class="info-box-text") Memory Usage (%)
+                                        span(id='gateway-memoryusage', class="info-box-number") N/A
+                            div(class='col-lg-4')
+                                div(class='info-box mb-3')
+                                    span(class="info-box-icon elevation-1")
+                                        i(class="fas fa-microchip")
+                                    div(class="info-box-content")
+                                        span(class="info-box-text") CPU (%)
+                                        span(id='gateway-cpuutilization', class="info-box-number") N/A
+                        hr
+                        div(class='row', id='networking-utilization-badges')

@@ -1,0 +1,49 @@
+extends ../../common/layout
+block content
+    div(class='row')
+        div(class='col-lg-6')
+            div(class='card')
+                div(class='card-body')
+                    table(id='edge-devices-table', class='table')
+                        thead
+                            tr
+                                th #
+                                th Device
+                                th Status
+                                th Online At
+                                th Actions
+                        tbody
+        div(class='col-lg-6 d-none', id='device-view')
+            div(class='card')
+                div(class='card-header')
+                    h2(class="card-title")
+                        i(class="fas fa-tablet")
+                        |
+                        span(class="ml-3", id='device-preview-header') -
+                    span(id='device-status', class='status-header')
+                div(class='card-body')
+                    div(id='device-info', class='text-center')
+                        div(class='row')
+                            div(class='col-lg-4')
+                                div(class='info-box mb-3')
+                                    span(class="info-box-icon elevation-1")
+                                        i(class="fas fa-hdd")
+                                    div(class="info-box-content")
+                                        span(class="info-box-text") Disk Usage (%)
+                                        span(id='device-diskusage', class="info-box-number") N/A
+                            div(class='col-lg-4')
+                                div(class='info-box mb-3')
+                                    span(class="info-box-icon elevation-1")
+                                        i(class="fas fa-memory")
+                                    div(class="info-box-content")
+                                        span(class="info-box-text") Memory Usage (%)
+                                        span(id='device-memoryusage', class="info-box-number") N/A
+                            div(class='col-lg-4')
+                                div(class='info-box mb-3')
+                                    span(class="info-box-icon elevation-1")
+                                        i(class="fas fa-microchip")
+                                    div(class="info-box-content")
+                                        span(class="info-box-text") CPU (%)
+                                        span(id='device-cpuutilization', class="info-box-number") N/A
+                        hr
+                        div(class='row', id='networking-utilization-badges')

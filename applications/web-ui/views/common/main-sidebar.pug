@@ -1,0 +1,56 @@
+a(href="#", class="brand-link")
+    img(src="/images/atlas.png", alt="ATLAS Logo", class="brand-image", style="opacity: .8")
+    span(class="brand-text font-weight-light") ATLAS Platform
+
+div(class='sidebar')
+    div(class="user-panel mt-3 pb-3 mb-3 d-flex")
+        div(class="image")
+            img(src="/images/avatar.png", class="img-circle elevation-2", alt="User Image")
+        div(class="info")
+            a(href="#", class="d-block") ATLAS User
+
+    nav(class="mt-2")
+        ul(class="nav nav-pills nav-sidebar flex-column", data-widget="treeview", role="menu", data-accordion="false")
+            - if (roles && roles.includes('admin'))
+                li(class="nav-item d-none")
+                    a(href="/", class="nav-link")
+                        i(class="nav-icon fas fa-project-diagram")
+                        p My Network
+            - if ( roles && roles.includes('user') )
+                li(class="nav-header") My Locations
+                each loc in locations
+                    li(class="nav-item")
+                        a(href="/locations/"+loc['locationId'], class="nav-link")
+                            i(class="nav-icon fas fa-home")
+                            p=loc['label']
+            - if (roles && roles.includes('admin'))
+                li(class="nav-header") Edge Devices
+            - if (roles && roles.includes('admin'))
+                li(class="nav-item")
+                    a(href="/gateways", class="nav-link")
+                        i(class="nav-icon fas fa-network-wired")
+                        p Gateways
+            - if (roles && roles.includes('admin'))
+                li(class="nav-item")
+                    a(href="/devices", class="nav-link")
+                        i(class="nav-icon fas fa-tablet-alt")
+                        p Devices
+            - if (roles && roles.includes('admin'))
+                li(class="nav-item d-none")
+                    a(href="/robots", class="nav-link")
+                        i(class="nav-icon fas fa-robot")
+                        p Robots
+            - if ( services && services.includes('simulations'))
+                li(class="nav-header") Network Simulations
+            - if ( services && services.includes('simulations'))
+                li(class="nav-item")
+                    a(href="/simulations/applications", class="nav-link")
+                        i(class="nav-icon fas fa-wrench")
+                        p Applications
+            - if (roles && roles.includes('admin'))
+                li(class="nav-header") Tools
+            - if (roles && roles.includes('admin'))
+                li(class="nav-item")
+                    a(href="/tools/bsplacement", class="nav-link")
+                        i(class="nav-icon fas fa-map-marked-alt")
+                        p Base Stations Placement

@@ -1,0 +1,76 @@
+extends ../../common/layout
+block content
+    div(class='row d-none')
+        div(id="user-location-identifier", data-location=locationId)
+    div(class='row')
+        div(class='col-lg-12')
+            div(class='card')
+                div(class='card-header')
+                    i(class="fas fa-map-marked-alt")
+                    |
+                    span(id="location-info", class="ml-2")
+                div(class='card-body')
+                    div(class='row')
+                        div(class='col-lg-2')
+                            div(class='info-box mb-3')
+                                span(class="info-box-icon elevation-1")
+                                    i(class="fas fa-thermometer-quarter")
+                                div(class="info-box-content")
+                                    span(class="info-box-text") Temperature
+                                    span(id='mylocation-temperature', class="info-box-number") N/A
+                        div(class='col-lg-2')
+                            div(class='info-box mb-3')
+                                span(class='info-box-icon elevation-1')
+                                    i(class='fas fa-hand-holding-water')
+                                div(class='info-box-content')
+                                    span(class='info-box-text') Humidity
+                                    span(id='mylocation-humidity', class='info-box-number') N/A
+
+    div(class='row')
+        div(class='col-lg-6')
+            div(class='card')
+                div(class='card-header')
+                    h2(class="card-title")
+                        i(class="fas fa-microchip")
+                        |
+                        span(class="ml-3") Location Devices
+                div(class='card-body')
+                    div(class='row')
+                        div(class='col-lg-12')
+                            h6
+                                strong Gateways
+                            table(id='myloc-gateways-tbl', class='table')
+                               tbody
+                        div(class='col-lg-12')
+                            h6
+                                strong Robots (Green Bullets)
+                            table(id='myloc-robots-tbl', class='table')
+                                tbody
+                        div(class='col-lg-12')
+                            h6
+                                strong Beacons (Red Bullets)
+                            table(id='myloc-beacons-tbl', class='table')
+                                tbody
+                        div(class='col-lg-12')
+                            h6
+                                strong Objects (Orange Bullets/Circles)
+                            table(id='myloc-devices-tbl', class='table')
+                                tbody
+        div(class='col-lg-6')
+            div(class='card')
+                div(class='card-header')
+                    h2(class="card-title")
+                        i(class="fas fa-map-marked-alt")
+                        |
+                        span(class="ml-3") Virtual Map
+                    div(class='row float-right')
+                        div(class="col-8 pt-2 text-right")
+                            span
+                            |
+                            strong Reference Map Dimensions:
+                        div(class="col-2")
+                            input(type="text", id='refmap-width', class="form-control text-center refmap-dimensions", placeholder="Reference width", value='135')
+                        div(class="col-2")
+                            input(type="text", id='refmap-height' , class="form-control text-center refmap-dimensions", placeholder="Reference height", value='163')
+                div(class='card-body')
+                    div(id='location-virtual-map', class='text-center') No map selected.
