@@ -8,13 +8,16 @@ const _ = require('underscore');
  */
 router.get('/', function(req, res, next) {
 
-  devicesManager.getLocations().then(locations =>{
-    //TODO Handler error in case no locations.
-    let locationId = _.first(locations).locationId;
-    res.redirect('/locations/'+locationId);
-  }).catch(err=> {
-    //TODO Handle error.
-  })
+  res.redirect('/locations/1');
+
+
+  // devicesManager.getLocations().then(locations =>{
+  //   //TODO Handler error in case no locations.
+  //   let locationId = _.first(locations).locationId;
+  //   res.redirect('/locations/'+locationId);
+  // }).catch(err=> {
+  //   //TODO Handle error.
+  // })
 });
 
 module.exports = router;
