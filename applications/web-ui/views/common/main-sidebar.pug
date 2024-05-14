@@ -35,22 +35,3 @@ div(class='sidebar')
                     a(href="/devices", class="nav-link")
                         i(class="nav-icon fas fa-tablet-alt")
                         p Devices
-            - if (roles && roles.includes('admin'))
-                li(class="nav-item d-none")
-                    a(href="/robots", class="nav-link")
-                        i(class="nav-icon fas fa-robot")
-                        p Robots
-            - if ( services && services.includes('simulations'))
-                li(class="nav-header") Network Simulations
-            - if ( services && services.includes('simulations'))
-                li(class="nav-item")
-                    a(href="/simulations/applications", class="nav-link")
-                        i(class="nav-icon fas fa-wrench")
-                        p Applications
-            - if (roles && roles.includes('admin'))
-                li(class="nav-header") Tools
-            - if (roles && roles.includes('admin'))
-                li(class="nav-item")
-                    a(href="/tools/bsplacement", class="nav-link")
-                        i(class="nav-icon fas fa-map-marked-alt")
-                        p Base Stations Placement

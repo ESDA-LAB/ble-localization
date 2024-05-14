@@ -8,7 +8,6 @@ const helmet = require("helmet");
 const indexRouter = require('./routes/index');
 const profileRouter = require('./routes/profile');
 const locationsRouter = require('./routes/locations');
-const robotsRouter = require('./routes/robots');
 const gatewaysRouter = require('./routes/gateways');
 const devicesRouter = require('./routes/devices');
 const parametersRouter = require('./routes/parameters');
@@ -39,7 +38,6 @@ app.use(helmet({
 app.use('/', indexRouter);
 app.use('/profile', profileRouter);
 app.use('/locations', locationsRouter);
-app.use('/robots', robotsRouter);
 app.use('/gateways', gatewaysRouter);
 app.use('/devices', devicesRouter);
 app.use('/parameters', parametersRouter);
@@ -50,12 +48,10 @@ app.use('/parameters', parametersRouter);
  */
 const profileRestRouter = require('./routes/api/profile.api');
 const locationsRestRouter = require('./routes/api/locations.api');
-const robotsRestRouter = require('./routes/api/robots.api');
 const gatewaysRestRouter = require('./routes/api/gateways.api');
 const devicesRestRouter = require('./routes/api/edge/devices.api');
 const parametersRestRouter = require('./routes/api/parameters.api');
 app.use('/rest/v1/profile', profileRestRouter);
-app.use('/rest/v1/robots', robotsRestRouter);
 app.use('/rest/v1/gateways', gatewaysRestRouter);
 app.use('/rest/v1/devices', devicesRestRouter);
 app.use('/rest/v1/locations', locationsRestRouter);

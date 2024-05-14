@@ -1,7 +1,6 @@
 $(document).ready(function(){
     let canvasInterval = undefined;
     let objectColors = {
-        "robot": "#008000",
         "device": "#F1904AFF",
         "sensor": "#F1904AFF",
         "object": "#F1904AFF",
@@ -41,15 +40,6 @@ $(document).ready(function(){
         });
     }
 
-    /**
-     * Initialize Robots
-     * @param robots
-     */
-    function initRobots(robots){
-        robots.forEach((robot, idx) => {
-            $('#myloc-robots-tbl > tbody').append('<tr data-deviceId="'+robot['robotId']+'" class="d-none"> <td>' + robot['urn'] + '</td><td>Location(Virtual): -</td></tr>');
-        });
-    }
 
     /**
      * Initialize Devices
@@ -147,11 +137,6 @@ $(document).ready(function(){
      */
     function updateTbl(deviceId, type, position){
         switch (type){
-            case 'robot':
-                let tdObj = $('#myloc-robots-tbl > tbody > tr[data-deviceId="'+deviceId+'"]');
-                tdObj.find("td:last-child").html('Location(Virtual): ['+position['cartesian']+']');
-                tdObj.removeClass("d-none");
-                break;
             case 'object':
                 if( position['cartesian'] !== undefined ){
                     let tdObj = $('#myloc-devices-tbl > tbody > tr[data-deviceId="'+deviceId+'"]');
@@ -226,7 +211,6 @@ $(document).ready(function(){
                     success: function(res) {
                         $('#location-info').html(res.location.label)
                         initGateways(res.gateways);
-                        initRobots(res.robots);
                         initDevices(res.devices);
                         renderCanvas(locationId, mapInfo.identity, mapInfo.width, mapInfo.height, res.devices);
                     }

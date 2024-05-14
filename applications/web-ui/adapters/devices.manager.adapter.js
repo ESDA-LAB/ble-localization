@@ -2,7 +2,6 @@ const config = require('config');
 const unirest = require('unirest');
 
 const deviceManagersBaseUrl = config.get('adapters.devices.url') + config.get('adapters.devices.version');
-const ROBOTS_ENDPOINT = '/robots';
 const DEVICES_ENDPOINT = '/devices';
 const GATEWAYS_ENDPOINT = '/gateways';
 const LOCATIONS_ENDPOINT = '/locations';
@@ -19,19 +18,6 @@ const DEVICES_API_HEADERS = {
 
 module.exports = {
 
-    /**
-     * List Available Robots.
-     */
-    getRobots: function(callback){
-
-        unirest('GET', deviceManagersBaseUrl + ROBOTS_ENDPOINT)
-            .headers(DEVICES_API_HEADERS)
-            .end(function (res) {
-                if (res.error) throw new Error(res.error);
-                callback(res.body);
-            });
-
-    },
 
     /**
      * List Available Gateways.

@@ -2,7 +2,6 @@ $(document).ready(function(){
 
     let canvasInterval = undefined;
     let objectColors = {};
-    objectColors["robot"] = "green";
     objectColors["device"] = "red";
 
     /**
