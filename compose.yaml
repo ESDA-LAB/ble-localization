@@ -34,6 +34,20 @@ services:
       - "18083:18083"
       - "1883:1883"
   
+  ## Data Streams DB
+  streams-db:
+    image: bitnami/cassandra:4.0
+    container_name: streams-db
+    networks:
+      - smart4all-net
+    restart: unless-stopped
+    environment:
+      - CASSANDRA_CLUSTER_NAME="smart4all-cluster"
+    volumes:
+    - "./configurations/cassandra:/docker-entrypoint-initdb.d"
+    ports:
+      - "9042:9042"
+  
   ## PostgreSQL Database
   localization-db:
     image: postgres:13.1-alpine
@@ -61,3 +75,18 @@ services:
       - mqtt-broker
     volumes:
       - "./applications/devices-manager/application.properties:/app/config/application.properties:ro"
+  
+  ## Localization Processor
+  rssi-processor:
+    build:
+      context: ./applications/rssi-processor
+    container_name: rssi-processor
+    networks:
+      - smart4all-net
+    depends_on:
+      - mqtt-broker
+      - streams-db
+      - devices-manager
+    restart: unless-stopped
+    volumes:
+      - "./applications/rssi-processor/application.properties:/app/config/application.properties:ro"
