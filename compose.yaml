@@ -90,3 +90,16 @@ services:
     restart: unless-stopped
     volumes:
       - "./applications/rssi-processor/application.properties:/app/config/application.properties:ro"
+  
+  ## Localization Processor
+  web-ui:
+    build:
+      context: ./applications/web-ui
+    container_name: web-ui
+    networks:
+      - smart4all-net
+    depends_on:
+      - devices-manager
+    restart: unless-stopped
+    ports:
+      - "3000:3000"

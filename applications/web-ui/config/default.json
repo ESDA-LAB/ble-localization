@@ -14,7 +14,7 @@
   },
   "adapters": {
     "devices": {
-      "url": "http://localhost",
+      "url": "http://devices-manager:8080",
       "version": "/v1"
     },
     "tools": {
