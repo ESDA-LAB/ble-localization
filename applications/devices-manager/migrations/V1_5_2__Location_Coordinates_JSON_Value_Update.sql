@@ -1,0 +1,1 @@
+UPDATE locations SET coordinates = '{}';

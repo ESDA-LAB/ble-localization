@@ -1,0 +1,11 @@
+DROP TABLE location_maps;
+DROP TABLE device_datatypes;
+DROP TABLE network_layer_interfaces;
+DROP TABLE location_objects;
+DROP TABLE locations;
+DROP TABLE gateways;
+DROP TABLE robots;
+DROP TABLE devices;
+DROP TABLE datatypes;
+DROP TABLE network_layer;
+DROP TABLE appendages;
