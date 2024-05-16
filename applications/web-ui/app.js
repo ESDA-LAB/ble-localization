@@ -24,13 +24,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      "script-src": ["'self'", "'unsafe-eval'"],
-    },
-  },
-}));
+// app.use(helmet({
+//   contentSecurityPolicy: {
+//     directives: {
+//       "script-src": ["'self'", "'unsafe-eval'"],
+//     },
+//   },
+// }));
 
 /**
  * Routers for handling UI.
