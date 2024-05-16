@@ -75,6 +75,8 @@ services:
       - mqtt-broker
     volumes:
       - "./applications/devices-manager/application.properties:/app/config/application.properties:ro"
+    ports:
+      - "8081:8080"
 
   ## Query Manager
   query-manager:
@@ -88,6 +90,8 @@ services:
       - streams-db
     volumes:
       - "./applications/query-manager/application.properties:/app/config/application.properties:ro"
+    ports:
+      - "8082:8080"
   
   ## Localization Processor
   rssi-processor:

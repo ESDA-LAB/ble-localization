@@ -34,7 +34,7 @@
     },
     "query": {
       "url": "http://query-manager:8080",
-      "version": ""
+      "version": "/v1"
     },
     "simulations": {
       "orchestrator": {
