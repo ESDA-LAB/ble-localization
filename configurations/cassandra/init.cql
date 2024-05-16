@@ -1,4 +1,5 @@
 CREATE KEYSPACE ambient WITH REPLICATION = { 'class' : 'org.apache.cassandra.locator.SimpleStrategy', 'replication_factor': '1' } AND DURABLE_WRITES = true;
+CREATE KEYSPACE edge_metrics WITH REPLICATION = { 'class' : 'org.apache.cassandra.locator.SimpleStrategy', 'replication_factor': '1' } AND DURABLE_WRITES = true;
 
 CREATE TABLE ambient.locations (
     location_id int,
