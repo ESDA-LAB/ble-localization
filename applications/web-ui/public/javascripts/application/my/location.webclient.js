@@ -9,16 +9,16 @@ $(document).ready(function(){
     };
     const locationId = $('#user-location-identifier').data('location');
 
-    setInterval(function(){
-        $.ajax({
-            url: "/rest/v1/locations/"+locationId+'/ambient',
-            type: 'GET',
-            dataType: 'json',
-            success: function(res) {
-                parseAmbient(res)
-            }
-        }); // END of AJAX
-    }, 20000);
+    // setInterval(function(){
+    //     $.ajax({
+    //         url: "/rest/v1/locations/"+locationId+'/ambient',
+    //         type: 'GET',
+    //         dataType: 'json',
+    //         success: function(res) {
+    //             parseAmbient(res)
+    //         }
+    //     }); // END of AJAX
+    // }, 20000);
 
     /**
      * Initialize gateways
