@@ -1,7 +1,7 @@
 
 # BLE Localization
 
-![https://esdalab.ece.uop.gr/index.php/en/](https://esdalab.ece.uop.gr/images/headers/new_final_logo_en.png)
+![ESDA-Logo](/assets/esda_logo.png)
 
 # How to run
 * Clone repository
