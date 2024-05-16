@@ -33,7 +33,7 @@
       "buckets": ["</>"]
     },
     "query": {
-      "url": "http://localhost",
+      "url": "http://query-manager:8080",
       "version": ""
     },
     "simulations": {

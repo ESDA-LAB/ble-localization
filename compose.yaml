@@ -75,6 +75,19 @@ services:
       - mqtt-broker
     volumes:
       - "./applications/devices-manager/application.properties:/app/config/application.properties:ro"
+
+  ## Query Manager
+  query-manager:
+    build:
+      context: ./applications/query-manager
+    container_name: query-manager
+    networks:
+      - smart4all-net
+    restart: unless-stopped
+    depends_on:
+      - streams-db
+    volumes:
+      - "./applications/query-manager/application.properties:/app/config/application.properties:ro"
   
   ## Localization Processor
   rssi-processor:
